@@ -5,8 +5,13 @@ import path from 'node:path';
 import session from 'express-session';
 import nunjucks from 'nunjucks';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 
 app.set('port', process.env.PORT || 3000);

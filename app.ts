@@ -6,6 +6,7 @@ import session from 'express-session';
 import nunjucks from 'nunjucks';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
+import { pageRouter } from './routers/page.js';
 
 dotenv.config();
 
@@ -39,6 +40,8 @@ app.use(
         },
     }),
 );
+
+app.use('/', pageRouter);
 
 app.use(
     (
